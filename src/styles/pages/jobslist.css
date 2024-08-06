@@ -1,0 +1,56 @@
+.body {
+    padding: 50px 40px 40px 30px;
+    display: flex;
+}
+
+
+.body .filter,
+.job-list {
+    color: black;
+    display: inline-block;
+}
+
+.body .filter {
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    margin-top: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    filter:
+        drop-shadow(20px 20px 30px rgba(255, 187, 0, 0.5));
+}
+
+.filter .top {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.filter .top .search-bar {
+    flex: 1;
+    height: 24px;
+    padding: 4px;
+}
+
+.filter .top .search-button {
+    margin-left: -2px;
+    height: 36px;
+    width: 50px;
+}
+
+.filter .top .search-button .search-icon {
+    margin-top: 2px;
+    width: 24px;
+}
+
+.filter .top .tooltip {
+    opacity: 0;
+}
+
+.body .job-list {
+    flex: 1;
+}
+
+.filter .bottom div {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(243, 243, 243);
+    font-family: Arial, Helvetica;
+    margin: 0px;
+}
+
+footer {
+    background-color: black;
+    color: gray;
+    bottom: 0px;
+    padding: 20px;
+    text-align: center;
+}

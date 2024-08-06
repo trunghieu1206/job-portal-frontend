@@ -1,0 +1,70 @@
+.menu-picture {
+    position: relative;
+    height: 500px;
+    text-align: center;
+    padding: 0px;
+}
+
+.menu-picture img {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    text-align: center;
+}
+
+.menu-picture .menu-picture-text {
+    background: rgb(246, 246, 246);
+    opacity: 0.8;
+    color: black;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    padding: 20px;
+    text-transform: uppercase;
+    width: 800px;
+    top: 50%;
+    left: 50%;
+
+}
+
+.featured-jobs {
+    margin: 50px 50px 50px 30px;
+}
+
+.featured-jobs p {
+    color: black;
+    margin-top: 70px;
+    text-align: center;
+    font-size: 25px;
+}
+
+hr {
+    border-top: 5px solid red;
+    width: 300px;
+    border-radius: 2px;
+}
+
+.more-job-button-container {
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.more-job-button-container .more-job-button {
+    background-color: rgb(243, 243, 243);
+    color: rgb(239, 79, 79);
+    border-color: rgb(239, 79, 79);
+    border-style: solid;
+    border-radius: 10px;
+    text-align: center;
+    height: 80px;
+    width: 200px;
+    font-size: 30px;
+    transition: 0.15s;
+}
+
+.more-job-button:hover {
+    background-color: rgb(239, 79, 79);
+    color: white;
+    cursor: pointer;
+}

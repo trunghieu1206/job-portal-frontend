@@ -1,17 +1,13 @@
 import { jobs } from "./jobs.js";
 
-function renderFeaturedJobs() {
-    let featuredJobsHTML = `
-    <p>Featured Jobs</p>
-    <hr>
-    `;
+function renderJobsList(role) {
+    let jobsListHTML = '';
 
     jobs.forEach((job) => {
-        if(job.featured === undefined){
-            return;
+        if(role !== job.type){
+            if(role !== 'all') return;
         }
-        featuredJobsHTML += `
-        
+        jobsListHTML += `
         <a href="/jobs/${job.id}.html">
             <div class="job js-job">
                 <div class="logo">
@@ -35,19 +31,20 @@ function renderFeaturedJobs() {
                             <i style='font-size:20px' class='fas'>&#xf155;</i> <span style="background-color: rgb(253, 106, 106); color: white; padding: 5px; border-radius: 10px;">${job.salary} USD</span>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </a>
-        `;
+        `
     });
 
-    document.querySelector('.js-featured-jobs').innerHTML = featuredJobsHTML;
+    document.querySelector(".js-job-list").innerHTML = jobsListHTML;
 }
 
-renderFeaturedJobs();
+renderJobsList('all');
 
-document.querySelector('.js-more-job-button').addEventListener('click', () => {
-    const url = 'http://localhost/jobslist.html'
-    window.location.href = url;
+document.querySelectorAll('.js-role').forEach((radioButton) => {
+    radioButton.addEventListener('click', (value) => {
+        const role = radioButton.dataset.role;
+        renderJobsList(role);
+    });
 });

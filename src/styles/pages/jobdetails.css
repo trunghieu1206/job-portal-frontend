@@ -1,0 +1,45 @@
+
+.job-title-container {
+    height: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-style: bold;
+}
+
+.job-title-container .job-title-detail {
+    color: rgb(64, 64, 64);
+    margin-top: 30px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.job-title-container .job-company-detail {
+    color: rgb(88, 88, 88);
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+hr {
+    margin-top: 20px;
+    border-top: 3px solid red;
+    width: 100px;
+    border-radius: 2px;
+}
+
+.job-title-container .job-place-detail {
+    color: rgb(155, 155, 155);
+    margin-top: 50px;
+}
+
+
+
+.job-details-container{
+    background-color: white;
+    height: 400px;
+}
+
+.job-review-container {
+    background-color: cyan;
+    height: 400px;
+}
