@@ -6,7 +6,9 @@ export const jobs = [
         type: "it",
         place: "Hanoi",
         company: "Company 1",
+        position: "Senior",
         salary: "50000 - 60000",
+        postTime: "1 day, 4 hours"
     },
     {
         id: "2",
@@ -167,3 +169,15 @@ export const jobs = [
         salary: "20000 - 30000",
     }
 ];
+
+export function getJob(id) {
+    let matchingJob;
+
+    jobs.forEach((job) => {
+        if(job.id === id) {
+            matchingJob = job;
+        }
+    });
+
+    return matchingJob;
+}

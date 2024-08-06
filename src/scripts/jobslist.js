@@ -8,7 +8,7 @@ function renderJobsList(role) {
             if(role !== 'all') return;
         }
         jobsListHTML += `
-        <a href="/jobs/${job.id}.html">
+        <a href="/jobdetails.html?id=${job.id}">
             <div class="job js-job">
                 <div class="logo">
                     <img class="background" src="images/job_logo.jpg" alt="">
@@ -43,7 +43,7 @@ function renderJobsList(role) {
 renderJobsList('all');
 
 document.querySelectorAll('.js-role').forEach((radioButton) => {
-    radioButton.addEventListener('click', (value) => {
+    radioButton.addEventListener('click', () => {
         const role = radioButton.dataset.role;
         renderJobsList(role);
     });
