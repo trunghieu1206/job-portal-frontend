@@ -52,7 +52,8 @@ hr {
     font-weight: bold;
 }
 
-.job-description-detail .job-description-detail-detail {
+.job-description-detail .job-description-detail-detail,
+.job-requirements-detail-detail {
     background-color: rgb(243, 243, 243);
     margin-top: 10px;
     display: flex;
@@ -92,34 +93,30 @@ hr {
     margin-top: 20px;
 }
 
-.job-requirements-detail-detail {
-    display: flex;
-    margin-top: 10px;
-}
-
 .job-requirements-detail-detail .line {
     background-color: rgb(207, 207, 102);
 }
 
-.apply-button {
+.apply-button,
+.review-button {
     background-color: white;
-    border-color: rgb(27, 184, 27);
+    border-color: rgb(239, 79, 79);
     border-style: solid;
     border-radius: 5px;
-    color: rgb(27, 184, 27);
+    color: rgb(239, 79, 79);
     margin-top: 30px;
     height: 40px;
     width: 300px;
     margin-left: 150px;
     font-size: 25px;
     font-weight: bold;
-    text-transform: uppercasec;
+    text-transform: uppercase;
     transition: background-color 0.15s;
     cursor: pointer;
 }
 
 .apply-button:hover {
-    background-color: rgb(27, 184, 27);
+    background-color: rgb(239, 79, 79);
     color: white;
 }
 
@@ -128,7 +125,31 @@ hr {
     margin-left: 100px;
 }
 
-.job-review-container {
-    background-color: cyan;
-    height: 400px;
+.right-section .top {
+    color: rgb(75, 75, 75);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.right-section .middle {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.right-section .bottom {
+    margin-top: 10px;
+}
+
+.review-button {
+    border-color: rgb(255, 187, 0);
+    color: rgb(255, 187, 0);
+    margin-left: 0;
+    height: 40px;
+    font-size: 18px;
+    width: 200px;
+}
+
+.review-button:hover {
+    background-color: rgb(255, 187, 0);
+    color: white;
 }

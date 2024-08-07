@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/shared/header.css">
+    <link rel="stylesheet" href="styles/shared/jobs.css">
+    <link rel="stylesheet" href="styles/pages/companydetail.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <a href="/index.html">Home</a>
+        </div>
+
+        <div class="right-section">
+            <a href="/jobslist.html">Find job</a>
+            <a href=".">About us</a>
+        </div>
+    </div>
+
+    <div class="company-title js-company-title">
+        <div class="company-logo">
+            Company logo
+        </div>
+
+        <div class="company-info">
+            <div class="company-name">Company 1</div>
+            <div>
+                <div class="company-type"><i style='font-size:16px' class='fas'>&#xf0b1;</i> IT</div>
+                <div class="company-scale"><i style="font-size:16px" class="fa">&#xf0c0;</i> 500 - 550</div>
+            </div>
+            <div class="company-place"><i style='font-size:16px' class='fas'>&#xf3c5;</i> Hanoi</div>
+        </div>
+    </div>
+
+    <div class="company-review-content-container">
+        <div class="company-review-content">
+            <div class="user-review">
+                <div class="user-logo">
+                    <img src="images/booking-1.png" alt="">
+                </div>
+                <div class="user-content">
+                    <input type="text" placeholder="Post your review here">
+                    <button class="send-button"><i style="font-size:24px" class="fa">&#xf1d8;</i></button>
+                </div>
+            </div>
+
+            <div class="review-count">
+                There are 3 reviews
+            </div>
+
+            <div class="others-review js-others-review">
+                <div class="review">
+                    <div class="user-detail">
+                        <div class="top">
+                            <div class="user-logo">
+                                <img src="images/booking-1.png" alt="">
+                            </div>
+                            <div class="user-detail-info">
+                                <div class="user-name">hieu</div>
+                                <div class="user-post-time">3 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="user-content">
+                            good
+                        </div>
+                    </div>
+                    <div class="widget"><i style="font-size:18px" class="fa">&#xf12a;</i></div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="company-review-count js-company-review-count">
+            <div class="review-summary">Review summary</div>
+            <div class="positive-review"><i class="fa fa-thumbs-up" style="font-size:30px;color:green"></i> 2</div>
+            <div class="negative-review"><i class="fa fa-thumbs-down" style="font-size:30px;color:red"></i> 1</div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        This website is developed by Hiu with &#9829;
+    </footer>
+
+    <script type="module" src="scripts/companydetail.js"></script>
+</body>
+</html>

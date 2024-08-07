@@ -1,4 +1,4 @@
-import { jobs } from "./jobs.js";
+import { jobs } from "../data/jobs.js";
 
 function renderJobsList(role) {
     let jobsListHTML = '';

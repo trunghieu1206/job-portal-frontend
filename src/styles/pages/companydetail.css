@@ -1,0 +1,179 @@
+.company-title {
+    background-color: white;
+    height: 120px;
+    padding: 30px 150px 30px 150px;
+    display: flex;
+}
+
+.company-title .company-logo {
+    background-image: url("../../images/company_logo_white_black.png");
+    background-size: 120px;
+    background-repeat: no-repeat;
+    border-color: rgb(220, 220, 220);
+    border-style: solid;
+    text-indent: -9999999px;
+    width: 120px;
+}
+
+.company-title .company-info {
+    margin-left: 40px;
+    flex: 1;
+}
+
+.company-info .company-name {
+    color: rgb(64, 64, 64);
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.company-info .company-type {
+    color: rgb(88, 88, 88);
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.company-info .company-scale {
+    color: rgb(88, 88, 88);
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.company-info .company-place {
+    color: rgb(88, 88, 88);
+    margin-top: 10px;
+}
+
+.company-review-content-container {
+    margin: 40px 150px 40px 150px;
+    display: flex;
+}
+
+.company-review-content {
+    flex: 1
+}
+
+.company-review-content .user-review {
+    background-color: white;
+    height: 40px;
+    padding: 20px;
+    display: flex;
+    filter:
+        drop-shadow(20px 20px 30px rgba(255, 0, 0, 0.5));
+}
+
+.user-review .user-logo {
+    background-color: rgb(243, 243, 243);
+    border-radius: 20px;
+}
+
+.user-logo img {
+    width: 38px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.user-review .user-content {
+    margin-left: 20px;
+}
+
+.user-content input {
+    padding: 10px;
+    font-size: 16px;
+    width: 400px;
+    vertical-align: top;
+}
+
+.send-button {
+    background-color: rgb(243, 243, 243);
+    border-style: none;
+    border-radius: 20px;
+    height: 42px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.company-review-content .review-count {
+    color: rgb(88, 88, 88);
+    margin-top: 40px;
+
+}
+
+.others-review .review {
+    background-color: white;
+    display: flex;
+    padding: 20px;
+    margin-top: 40px;
+    filter:
+        drop-shadow(20px 20px 30px rgba(255, 0, 0, 0.5));
+}
+
+.user-detail {
+    flex: 1;
+}
+
+.user-detail .top {
+    display: flex;
+}
+
+.user-detail .user-logo {
+    background-color: rgb(243, 243, 243);
+    border-radius: 50%;
+}
+
+.top .user-detail-info {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.user-detail-info .user-name {
+    color: rgb(64, 64, 64);
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.user-detail-info .user-post-time {
+    color: rgb(64, 64, 64);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.user-detail .user-content {
+    color: rgb(64, 64, 64);
+    margin-top: 30px;
+}
+
+.widget {
+    background-color: rgb(243, 243, 243); 
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.company-review-count {
+    background-color: white;
+    margin-left: 50px;
+    width: 300px;
+    height: 140px;
+    padding: 20px;
+    filter:
+        drop-shadow(20px 20px 30px rgba(255, 187, 0, 0.5));
+}
+
+.company-review-count .review-summary {
+    color: rgb(64, 64, 64);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.company-review-count .positive-review,
+.negative-review {
+    margin-top: 20px;
+    font-size: 24px;
+}
