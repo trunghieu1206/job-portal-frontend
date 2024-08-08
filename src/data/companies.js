@@ -6,25 +6,25 @@ export const companies = [
                 name: "hieu",
                 content: "good",
                 postTime: "3 hours ago",
-                type: "positive",
+                star: 5, //integer only
             },
             {
                 name: "hoang",
                 content: "bad",
                 postTime: "2 days ago",
-                type: "negative",
+                star: 1,
             },
             {
                 name: "huy",
                 content: "not good not bad, OK!",
                 postTime: "5 days ago",
-                type: "positive",
+                star: 3,
             },
             {
                 name: "hieu hoang",
                 content: "good company",
                 postTime: "10 days ago",
-                type: "positive",
+                star: 4,
             }
         ],
         type: "IT",
@@ -38,7 +38,7 @@ export const companies = [
                 "name": "an",
                 "content": "excellent service",
                 "postTime": "1 hour ago",
-                "type": "positive"
+                "type": "positive" //change to "star" attribute and assign interger only
             },
             {
                 "name": "binh",
@@ -207,4 +207,19 @@ export function countNegativeReview(company) {
     });
 
     return negativeCount;
+}
+
+export function calculateStar(company) {
+    let totalStar = 0;
+
+    company.reviews.forEach((review) => {
+        totalStar += review.star;
+    });
+
+    const totalReviews = countReview(company);
+    return (totalStar / totalReviews).toFixed(1);
+}
+
+export function addReview(company, review) {
+    company.reviews.unshift(review);
 }

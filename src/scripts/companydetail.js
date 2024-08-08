@@ -1,5 +1,5 @@
 import { jobs } from "../data/jobs.js";
-import { companies, getCompany, countPositiveReview, countNegativeReview, countReview } from "../data/companies.js";
+import { companies, getCompany, countPositiveReview, countNegativeReview, countReview, calculateStar, addReview } from "../data/companies.js";
 import { getCookie, setCookie } from "./utils/cookies.js";
 
 renderReviewPage();
@@ -28,7 +28,7 @@ function renderCompanyDetail(company) {
     </div>
 
     <div class="company-info">
-        <div class="company-name">${company.name}</div>
+        <div class="company-name js-company-name">${company.name}</div>
         <div>
             <div class="company-type"><i style='font-size:16px' class='fas'>&#xf0b1;</i> ${company.type}</div>
             <div class="company-scale"><i style="font-size:16px" class="fa">&#xf0c0;</i> ${company.scale}</div>
@@ -51,8 +51,26 @@ function renderUserReview() {
         `;
     } else {
         userReviewHTML = `
-        <input type="text" placeholder="Post your review here">
-        <button class="send-button"><i style="font-size:24px" class="fa">&#xf1d8;</i></button>
+        <input type="text" class="js-input-content" placeholder="Post your review here">
+        <div class="user-choose-star">
+            <span data-id="1"
+                class="star js-star">★
+            </span>
+            <span data-id="2"
+                class="star js-star">★
+            </span>
+            <span data-id="3"
+                class="star js-star">★
+            </span>
+            <span data-id="4"
+                class="star js-star">★
+            </span>
+            <span data-id="5"
+                class="star js-star">★
+            </span>
+            <div class="star-output js-star-output">1</div>
+        </div>
+        <button class="send-button js-send-button"><i style="font-size:24px" class="fa">&#xf1d8;</i></button>
         `;
     }
 
@@ -75,6 +93,11 @@ function renderOthersReviews(company) {
                         <div class="user-post-time">${review.postTime}</div>
                     </div>
                 </div>
+
+                <div class="user-star js-user-star">
+                    ${renderOthersStar(review)}
+                </div>
+
                 <div class="user-content">
                     ${review.content}
                 </div>
@@ -88,11 +111,88 @@ function renderOthersReviews(company) {
 }
 
 function renderReviewSummary(company) {
+    const companyStar = calculateStar(company);
+    const companyStarRound = Math.round(companyStar);
+
     const reviewSummaryHTML = `
     <div class="review-summary">Review summary</div>
-    <div class="positive-review"><i class="fa fa-thumbs-up" style="font-size:30px;color:green"></i> ${countPositiveReview(company)}</div>
-    <div class="negative-review"><i class="fa fa-thumbs-down" style="font-size:30px;color:red"></i> ${countNegativeReview(company)}</div>
+        <div class="company-star">
+            <span class="star star-1">${checkIfChoose(companyStarRound, 1)}</span>
+            <span class="star star-2">${checkIfChoose(companyStarRound, 2)}</span>
+            <span class="star star-3">${checkIfChoose(companyStarRound, 3)}</span>
+            <span class="star star-4">${checkIfChoose(companyStarRound, 4)}</span>
+            <span class="star star-5">${checkIfChoose(companyStarRound, 5)}</span>
+        </div>
+        <div class="review-count">
+            ${companyStar} | ${countReview(company)} reviews
+        </div>
+    </div>
     `;
 
     document.querySelector('.js-company-review-count').innerHTML = reviewSummaryHTML;
+}
+
+function renderOthersStar(review) {
+    const starsHTML = `
+    <span class="star star-1">${checkIfChoose(review.star, 1)}</span>
+    <span class="star star-2">${checkIfChoose(review.star, 2)}</span>
+    <span class="star star-3">${checkIfChoose(review.star, 3)}</span>
+    <span class="star star-4">${checkIfChoose(review.star, 4)}</span>
+    <span class="star star-5">${checkIfChoose(review.star, 5)}</span>
+    `;
+
+    return starsHTML;
+}
+
+function checkIfChoose(star, k) {
+    if(star >= k){
+        return '★';
+    } 
+    return '☆';
+}
+
+document.querySelector('.js-send-button').addEventListener('click', () => {
+    const star = parseInt(document.querySelector('.js-star-output').innerHTML);
+    const content = document.querySelector('.js-input-content').value;
+    const review = {
+        name: "You",
+        content: content,
+        postTime: "Just now",
+        star: star,
+    };
+    const companyName = document.querySelector('.company-name').innerHTML;
+    const company = getCompany(companyName);
+
+
+    addReview(company, review);
+
+    renderReviewPage();
+
+});
+
+let stars = document.querySelectorAll('.js-star');
+let output = document.querySelector('.js-star-output');
+stars.forEach((star) => {
+    star.addEventListener('click', () => {
+        gfg(star.dataset.id);
+    });
+});
+
+function gfg(n) {
+	remove();
+
+	for (let i = 0; i < n; i++) {
+		stars[i].className = "star " + "js-star " + "display-color";
+	};
+
+	output.innerHTML = n;
+}
+
+// To remove the pre-applied styling
+function remove() {
+	let i = 0;
+	while (i < 5) {
+		stars[i].className = "star " + "js-star";
+		i++;
+	}
 }

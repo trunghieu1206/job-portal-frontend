@@ -45,7 +45,7 @@
 }
 
 .company-review-content-container {
-    margin: 40px 150px 40px 150px;
+    margin: 40px 120px 40px 150px;
     display: flex;
 }
 
@@ -74,6 +74,7 @@
 }
 
 .user-review .user-content {
+    margin-top: 0px;
     margin-left: 20px;
 }
 
@@ -93,8 +94,27 @@
 .user-content input {
     padding: 10px;
     font-size: 16px;
-    width: 400px;
+    width: 300px;
     vertical-align: top;
+    flex: 1;
+}
+
+.user-content .user-choose-star {
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.user-choose-star .display-color {
+    color: rgb(227, 227, 19);
+}
+
+.user-choose-star .star {
+    cursor: pointer;
+}
+
+.user-choose-star .star-output {
+    display: none;
 }
 
 .send-button {
@@ -103,7 +123,8 @@
     border-radius: 20px;
     height: 42px;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 20px;
+    display: inline-block;
 }
 
 .company-review-content .review-count {
@@ -154,7 +175,18 @@
 
 .user-detail .user-content {
     color: rgb(64, 64, 64);
-    margin-top: 30px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.user-detail .user-star {
+    margin-top: 20px;
+    background-color: white;
+}
+
+.user-star .star {
+    color: rgb(227, 227, 19);
+    font-size: 20px;
 }
 
 .widget {
@@ -183,6 +215,17 @@
     color: rgb(64, 64, 64);
     font-weight: bold;
     font-size: 24px;
+}
+
+.company-review-count .company-star {
+    color: rgb(221, 221, 40);
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.company-review-count .review-count {
+    margin-top: 14px;
+    font-size: 18px;
 }
 
 .company-review-count .positive-review,
