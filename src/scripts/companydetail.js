@@ -1,5 +1,6 @@
 import { jobs } from "../data/jobs.js";
-import { companies, getCompany, countPositiveReview, countNegativeReview } from "../data/companies.js";
+import { companies, getCompany, countPositiveReview, countNegativeReview, countReview } from "../data/companies.js";
+import { getCookie, setCookie } from "./utils/cookies.js";
 
 renderReviewPage();
 
@@ -11,8 +12,13 @@ function renderReviewPage() {
 
 
     renderCompanyDetail(company);
-    renderUserReviews(company);
+
+    document.querySelector('.js-review-count').innerHTML = `There are ${countReview(company)} reviews`
+
+    renderOthersReviews(company);
     renderReviewSummary(company);
+
+    renderUserReview();
 }
 
 function renderCompanyDetail(company) {
@@ -34,7 +40,26 @@ function renderCompanyDetail(company) {
     document.querySelector('.js-company-title').innerHTML = companyDetailHTML;
 }
 
-function renderUserReviews(company) {
+function renderUserReview() {
+    const proved = getCookie('proved') || 'false';
+
+    let userReviewHTML;
+
+    if(proved === 'false'){
+        userReviewHTML = `
+        <div class="warning">You have to <span class="warning-text" onclick="window.location.href='/formsubmission.html'">prove yourself</span> before you can post review</div>
+        `;
+    } else {
+        userReviewHTML = `
+        <input type="text" placeholder="Post your review here">
+        <button class="send-button"><i style="font-size:24px" class="fa">&#xf1d8;</i></button>
+        `;
+    }
+
+    document.querySelector('.js-user-content').innerHTML = userReviewHTML;
+}
+
+function renderOthersReviews(company) {
     let userReviewsHTML = '';
 
     company.reviews.forEach((review) => {
@@ -61,7 +86,6 @@ function renderUserReviews(company) {
 
     document.querySelector('.js-others-review').innerHTML = userReviewsHTML;
 }
-
 
 function renderReviewSummary(company) {
     const reviewSummaryHTML = `

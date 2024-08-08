@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/shared/header.css">
+    <link rel="stylesheet" href="styles/shared/jobs.css">
+    <link rel="stylesheet" href="styles/pages/companylist.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <a href="/index.html">Home</a>
+        </div>
+
+        <div class="right-section">
+            <a href="/jobslist.html">Find job</a>
+            <a href="/companylist.html">Find Company</a>
+            <a href=".">About us</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="intro">
+            <h1>Company Reviews</h1>
+            <p>Browse and review available companies</p>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Company Name">
+            <button>Find</button>
+        </div>
+        
+        <div class="company-list js-company-list">
+            <div class="company">
+                <h3>Company 1</h3>
+                <div class="stars">★★★☆☆</div>
+                <p>3.0 stars | 3 reviews</p>
+                <p>Scale | 1-50</p>
+                <p>Hanoi</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/companylist.js"></script>
+</body>
+</html>

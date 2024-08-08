@@ -1,4 +1,5 @@
 import { jobs } from "../data/jobs.js";
+import { deleteAllCookies } from "./utils/cookies.js";
 
 function renderFeaturedJobs() {
     let featuredJobsHTML = `
@@ -51,3 +52,5 @@ document.querySelector('.js-more-job-button').addEventListener('click', () => {
     const url = 'http://localhost/jobslist.html'
     window.location.href = url;
 });
+
+deleteAllCookies();

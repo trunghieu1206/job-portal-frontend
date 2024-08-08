@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/shared/header.css">
+    <link rel="stylesheet" href="styles/shared/jobs.css">
+    <link rel="stylesheet" href="styles/pages/formsubmission.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <a href="/index.html">Home</a>
+        </div>
+
+        <div class="right-section">
+            <a href="/jobslist.html">Find job</a>
+            <a href="/companylist.html">Find Company</a>
+            <a href=".">About us</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Submit Your Proof</h1>
+        <form>
+            <label for="company-name">Company Name</label>
+            <input type="text" id="company-name" name="company-name" placeholder="Enter the company name" required>
+            
+            <label for="photo">Upload Photos (Company Contract)</label>
+            <input type="file" id="photo" name="photo" accept="image/*" multiple>
+            
+            <button type="submit" class="js-submit-button">Submit Proof</button>
+        </form>
+    </div>
+
+    <script type="module" src="scripts/formsubmission.js"></script>
+</body>
+</html>

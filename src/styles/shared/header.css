@@ -16,8 +16,7 @@ a {
     font-weight: bold;
 }
 
-.header .left-section,
-.right-section {
+.header .left-section {
     flex: 1;
 
 }
@@ -26,12 +25,7 @@ a {
     margin-left: 80px;
 }
 
-
 .right-section a {
     align-items: center;
-    margin-right: 20px;
-}
-
-.right-section a:first-child {
-    margin-left: 300px;
+    margin-right: 40px;
 }
