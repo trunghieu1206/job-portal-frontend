@@ -1,6 +1,7 @@
 import { jobs } from "../data/jobs.js";
 import { companies, getCompany, countPositiveReview, countNegativeReview, countReview, calculateStar, addReview } from "../data/companies.js";
 import { getCookie, setCookie } from "./utils/cookies.js";
+import { checkIfChoose } from "./utils/stars.js";
 
 renderReviewPage();
 
@@ -11,7 +12,7 @@ function renderReviewPage() {
     const company = getCompany(companyName);
 
 
-    renderCompanyDetail(company);
+    renderCompanyDetail(company);   
 
     document.querySelector('.js-review-count').innerHTML = `There are ${countReview(company)} reviews`
 
@@ -144,12 +145,7 @@ function renderOthersStar(review) {
     return starsHTML;
 }
 
-function checkIfChoose(star, k) {
-    if(star >= k){
-        return '★';
-    } 
-    return '☆';
-}
+
 
 document.querySelector('.js-send-button').addEventListener('click', () => {
     const star = parseInt(document.querySelector('.js-star-output').innerHTML);

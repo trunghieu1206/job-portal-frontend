@@ -49,26 +49,24 @@
 }
 
 .company h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 0px 0;
 }
 
-.stars-review-count {
-    display: flex;
-    flex-direction: row;
+.company .company-star {
+    color: rgb(227, 227, 19);
+    font-size: 16px;
+    margin-top: 6px;
+    display: inline-block;
 }
 
-.stars-review-count .stars {
-    color: #ffa500;
-    margin-bottom: 10px;
-}
-
-.stars-review-count .review-count {
-    margin-left: 10px; 
-    margin-top: 4px;
+.company .review-count {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 10px;
 }
 
 .company p {
-    margin: 5px 0;
+    margin: 8px 0px 0px 0px;
 }
 .company:before {
     content: '';
