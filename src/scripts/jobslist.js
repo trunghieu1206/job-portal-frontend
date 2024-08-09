@@ -1,5 +1,7 @@
 import { jobs } from "../data/jobs.js";
 
+renderJobsList('all');
+
 function renderJobsList(role) {
     let jobsListHTML = '';
 
@@ -11,9 +13,9 @@ function renderJobsList(role) {
         <a href="/jobdetails.html?id=${job.id}">
             <div class="job js-job">
                 <div class="logo">
-                    <img class="background" src="images/job_logo.jpg" alt="">
-                    <img class="top" src="images/company_logo.png" alt="">
+
                 </div>
+                <img class="background" src="images/job_logo.jpg" alt="">
 
                 <div class="contents">
                     <div class="job-title">
@@ -39,8 +41,6 @@ function renderJobsList(role) {
 
     document.querySelector(".js-job-list").innerHTML = jobsListHTML;
 }
-
-renderJobsList('all');
 
 document.querySelectorAll('.js-role').forEach((radioButton) => {
     radioButton.addEventListener('click', () => {

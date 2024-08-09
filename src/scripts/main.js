@@ -1,6 +1,8 @@
 import { jobs } from "../data/jobs.js";
 import { deleteAllCookies } from "./utils/cookies.js";
 
+renderFeaturedJobs();
+
 function renderFeaturedJobs() {
     let featuredJobsHTML = `
     <p>Featured Jobs</p>
@@ -16,9 +18,9 @@ function renderFeaturedJobs() {
         <a href="/jobdetails.html?id=${job.id}">
             <div class="job js-job">
                 <div class="logo">
-                    <img class="background" src="images/job_logo.jpg" alt="">
-                    <img class="top" src="images/company_logo.png" alt="">
+
                 </div>
+                <img class="background" src="images/job_logo.jpg" alt="">
 
                 <div class="contents">
                     <div class="job-title">
@@ -46,7 +48,7 @@ function renderFeaturedJobs() {
     document.querySelector('.js-featured-jobs').innerHTML = featuredJobsHTML;
 }
 
-renderFeaturedJobs();
+
 
 document.querySelector('.js-more-job-button').addEventListener('click', () => {
     const url = 'http://localhost/jobslist.html'
